@@ -152,7 +152,7 @@ export function StationDetail() {
                         <CardTitle>{exit.name}</CardTitle>
                         <Badge variant="outline">{exit.direction}</Badge>
                       </div>
-                      <CardDescription className="space-y-2">
+                      <div className="space-y-2 text-sm text-neutral-600">
                         <div className="flex items-start gap-2">
                           <Navigation className="size-4 mt-0.5 flex-shrink-0" />
                           <span>{exit.leads}</span>
@@ -163,7 +163,7 @@ export function StationDetail() {
                           <span className="text-neutral-400">•</span>
                           <span>{exit.shade}</span>
                         </div>
-                      </CardDescription>
+                      </div>
                     </CardHeader>
                   </Card>
                 ))}
@@ -200,7 +200,7 @@ export function StationDetail() {
                           </div>
                           <div className="flex-1">
                             <CardTitle className="mb-2">{option.mode}</CardTitle>
-                            <CardDescription className="space-y-3">
+                            <div className="space-y-3 text-sm text-neutral-600">
                               <div>
                                 <span className="font-medium text-neutral-700">Details: </span>
                                 {option.detail}
@@ -215,7 +215,7 @@ export function StationDetail() {
                                   <span className="text-sm">{option.heatWarning}</span>
                                 </div>
                               )}
-                            </CardDescription>
+                            </div>
                           </div>
                         </div>
                       </CardHeader>
@@ -241,10 +241,10 @@ export function StationDetail() {
                       <div className="flex items-start justify-between">
                         <div>
                           <CardTitle className="text-lg mb-1">{poi.name}</CardTitle>
-                          <CardDescription className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 text-sm text-neutral-600">
                             <Footprints className="size-4" />
                             {poi.distance}
-                          </CardDescription>
+                          </div>
                         </div>
                         <Badge variant="outline">{poi.exit}</Badge>
                       </div>
