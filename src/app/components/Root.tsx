@@ -3,7 +3,6 @@ import { Menu, X, Globe, Train, Map, HelpCircle, Users, Calendar, AlertCircle, I
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import rptLogo from "figma:asset/d04f219f33b01dcb3ee5317e461ade9798098632.png";
 
 export function Root() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -71,7 +70,7 @@ export function Root() {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img 
-                src={rptLogo} 
+                src="/rpt-logo.svg" 
                 alt="Riyadh Public Transport" 
                 className="h-10 w-auto"
               />
@@ -191,7 +190,7 @@ export function Root() {
             <div>
               <div className="mb-4">
                 <img 
-                  src={rptLogo} 
+                  src="/rpt-logo.svg" 
                   alt="Riyadh Public Transport" 
                   className="h-8 w-auto brightness-0 invert"
                 />

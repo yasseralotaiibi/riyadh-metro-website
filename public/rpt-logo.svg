@@ -1,0 +1,14 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Metro Icon -->
+  <rect x="0" y="15" width="50" height="30" rx="4" fill="#0F2847"/>
+  <rect x="6" y="21" width="16" height="12" rx="2" fill="#5DD329"/>
+  <rect x="28" y="21" width="16" height="12" rx="2" fill="#5DD329"/>
+  <circle cx="14" cy="40" r="3" fill="#0F2847"/>
+  <circle cx="36" cy="40" r="3" fill="#0F2847"/>
+  
+  <!-- RPT Text -->
+  <text x="60" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#0F2847">RPT</text>
+  
+  <!-- Riyadh Metro Text -->
+  <text x="60" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500" fill="#3A3A3A">RIYADH METRO</text>
+</svg>
