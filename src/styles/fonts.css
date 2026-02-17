@@ -14,6 +14,7 @@
   font-family: 'RPT Arabic';
   src: local('RPT Arabic Regular'),
        local('RPTArabic-Regular'),
+       url('/fonts/rpt-arabic-regular.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_AlFont_com_-rpt-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
@@ -25,6 +26,7 @@
   font-family: 'RPT Arabic';
   src: local('RPT Arabic Bold'),
        local('RPTArabic-Bold'),
+       url('/fonts/rpt-arabic-bold.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_AlFont_com_-rpt-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
@@ -36,6 +38,7 @@
   font-family: 'RPT Latin';
   src: local('RPT Latin Regular'),
        local('RPTLatin-Regular'),
+       url('/fonts/rpt-latin-regular.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_rpt-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
@@ -47,6 +50,7 @@
   font-family: 'RPT Latin';
   src: local('RPT Latin Bold'),
        local('RPTLatin-Bold'),
+       url('/fonts/rpt-latin-bold.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_rpt-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
@@ -114,6 +118,7 @@ html[lang="ar"],
 @font-face {
   font-family: 'RPT Arabic';
   src: local('RPT Arabic Regular'),
+       url('/fonts/rpt-arabic-regular.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_AlFont_com_-rpt-Regular.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
@@ -124,6 +129,7 @@ html[lang="ar"],
 @font-face {
   font-family: 'RPT Arabic';
   src: local('RPT Arabic Bold'),
+       url('/fonts/rpt-arabic-bold.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_AlFont_com_-rpt-Bold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
@@ -133,6 +139,7 @@ html[lang="ar"],
 @font-face {
   font-family: 'RPT Latin';
   src: local('RPT Latin Regular'),
+       url('/fonts/rpt-latin-regular.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_rpt-Regular.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
@@ -142,6 +149,7 @@ html[lang="ar"],
 @font-face {
   font-family: 'RPT Latin';
   src: local('RPT Latin Bold'),
+       url('/fonts/rpt-latin-bold.woff2') format('woff2'),
        url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_rpt-Bold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
