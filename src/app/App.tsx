@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
+import { LanguageProvider } from './contexts/LanguageContext';
 import { Root } from './components/Root';
 import { Home } from './pages/Home';
 import { JourneyPlanner } from './pages/JourneyPlanner';
@@ -15,22 +16,24 @@ import '../styles/stacking-cards.css';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Root />}>
-          <Route index element={<Home />} />
-          <Route path="plan" element={<JourneyPlanner />} />
-          <Route path="stations" element={<Stations />} />
-          <Route path="stations/:stationId" element={<StationDetail />} />
-          <Route path="first-time" element={<FirstTime />} />
-          <Route path="visitors" element={<Visitors />} />
-          <Route path="faq" element={<FAQ />} />
-          <Route path="etiquette" element={<Etiquette />} />
-          <Route path="status" element={<ServiceStatus />} />
-          <Route path="accessibility" element={<Accessibility />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Root />}>
+            <Route index element={<Home />} />
+            <Route path="plan" element={<JourneyPlanner />} />
+            <Route path="stations" element={<Stations />} />
+            <Route path="stations/:stationId" element={<StationDetail />} />
+            <Route path="first-time" element={<FirstTime />} />
+            <Route path="visitors" element={<Visitors />} />
+            <Route path="faq" element={<FAQ />} />
+            <Route path="etiquette" element={<Etiquette />} />
+            <Route path="status" element={<ServiceStatus />} />
+            <Route path="accessibility" element={<Accessibility />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
