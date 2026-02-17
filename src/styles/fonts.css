@@ -1,0 +1,184 @@
+/* 
+ * RPT Arabic and Latin Fonts
+ * Custom bilingual typeface designed by Tarek Atrissi Design for Riyadh Metro
+ * 
+ * RPT Arabic: Inspired by Kufi calligraphic style with geometric construction
+ *             Features slight inclination suggesting movement
+ * 
+ * RPT Latin: Geometric construction matching the Arabic style
+ *            Created to ensure bilingual harmony
+ */
+
+/* RPT Arabic Font Family - Regular Weight */
+@font-face {
+  font-family: 'RPT Arabic';
+  src: local('RPT Arabic Regular'),
+       local('RPTArabic-Regular'),
+       url('/fonts/RPTArabic-Regular.woff2') format('woff2'),
+       url('/fonts/RPTArabic-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* RPT Arabic Font Family - Bold Weight */
+@font-face {
+  font-family: 'RPT Arabic';
+  src: local('RPT Arabic Bold'),
+       local('RPTArabic-Bold'),
+       url('/fonts/RPTArabic-Bold.woff2') format('woff2'),
+       url('/fonts/RPTArabic-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* RPT Latin Font Family - Regular Weight */
+@font-face {
+  font-family: 'RPT Latin';
+  src: local('RPT Latin Regular'),
+       local('RPTLatin-Regular'),
+       url('/fonts/RPTLatin-Regular.woff2') format('woff2'),
+       url('/fonts/RPTLatin-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* RPT Latin Font Family - Bold Weight */
+@font-face {
+  font-family: 'RPT Latin';
+  src: local('RPT Latin Bold'),
+       local('RPTLatin-Bold'),
+       url('/fonts/RPTLatin-Bold.woff2') format('woff2'),
+       url('/fonts/RPTLatin-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS Variables for RPT Fonts with fallbacks */
+:root {
+  --font-arabic: 'RPT Arabic', 'Cairo', 'Almarai', 'Noto Sans Arabic', 'Tajawal', sans-serif;
+  --font-latin: 'RPT Latin', 'Montserrat', 'Inter', 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Base font application */
+body {
+  font-family: var(--font-latin);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Apply Arabic font when RTL is active */
+.rtl,
+[dir="rtl"],
+html[lang="ar"],
+.rtl *,
+[dir="rtl"] * {
+  font-family: var(--font-arabic);
+  font-weight: 500;
+}
+
+/* Ensure Latin text uses Latin font in RTL context */
+.rtl .latin-text,
+[dir="rtl"] .latin-text {
+  font-family: var(--font-latin);
+}
+
+/* Ensure Arabic text uses Arabic font in LTR context */
+.ltr .arabic-text,
+[dir="ltr"] .arabic-text {
+  font-family: var(--font-arabic);
+}
+
+/* Font weight utilities matching RPT weights */
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+/* Additional RPT font weights (if available) */
+@font-face {
+  font-family: 'RPT Arabic';
+  src: local('RPT Arabic Medium'),
+       local('RPTArabic-Medium'),
+       url('/fonts/RPTArabic-Medium.woff2') format('woff2'),
+       url('/fonts/RPTArabic-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RPT Arabic';
+  src: local('RPT Arabic SemiBold'),
+       local('RPTArabic-SemiBold'),
+       url('/fonts/RPTArabic-SemiBold.woff2') format('woff2'),
+       url('/fonts/RPTArabic-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RPT Latin';
+  src: local('RPT Latin Medium'),
+       local('RPTLatin-Medium'),
+       url('/fonts/RPTLatin-Medium.woff2') format('woff2'),
+       url('/fonts/RPTLatin-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RPT Latin';
+  src: local('RPT Latin SemiBold'),
+       local('RPTLatin-SemiBold'),
+       url('/fonts/RPTLatin-SemiBold.woff2') format('woff2'),
+       url('/fonts/RPTLatin-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Slight inclination for movement effect (RPT characteristic) */
+h1, h2, h3 {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Geometric construction with tighter letter spacing */
+button, 
+.button,
+.btn {
+  font-family: var(--font-latin);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.rtl button,
+.rtl .button,
+.rtl .btn,
+[dir="rtl"] button,
+[dir="rtl"] .button,
+[dir="rtl"] .btn {
+  font-family: var(--font-arabic);
+  font-weight: 600;
+}
