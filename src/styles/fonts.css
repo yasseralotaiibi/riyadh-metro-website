@@ -14,8 +14,7 @@
   font-family: 'RPT Arabic';
   src: local('RPT Arabic Regular'),
        local('RPTArabic-Regular'),
-       url('/fonts/RPTArabic-Regular.woff2') format('woff2'),
-       url('/fonts/RPTArabic-Regular.woff') format('woff');
+       url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_AlFont_com_-rpt-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,8 +25,7 @@
   font-family: 'RPT Arabic';
   src: local('RPT Arabic Bold'),
        local('RPTArabic-Bold'),
-       url('/fonts/RPTArabic-Bold.woff2') format('woff2'),
-       url('/fonts/RPTArabic-Bold.woff') format('woff');
+       url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_AlFont_com_-rpt-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -38,8 +36,7 @@
   font-family: 'RPT Latin';
   src: local('RPT Latin Regular'),
        local('RPTLatin-Regular'),
-       url('/fonts/RPTLatin-Regular.woff2') format('woff2'),
-       url('/fonts/RPTLatin-Regular.woff') format('woff');
+       url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_rpt-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -50,8 +47,7 @@
   font-family: 'RPT Latin';
   src: local('RPT Latin Bold'),
        local('RPTLatin-Bold'),
-       url('/fonts/RPTLatin-Bold.woff2') format('woff2'),
-       url('/fonts/RPTLatin-Bold.woff') format('woff');
+       url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_rpt-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -113,24 +109,22 @@ html[lang="ar"],
   font-weight: 800;
 }
 
-/* Additional RPT font weights (if available) */
+/* Additional RPT font weights - Simulated from Regular and Bold */
+/* Medium weight (500) - Uses Regular with slight browser weight adjustment */
 @font-face {
   font-family: 'RPT Arabic';
-  src: local('RPT Arabic Medium'),
-       local('RPTArabic-Medium'),
-       url('/fonts/RPTArabic-Medium.woff2') format('woff2'),
-       url('/fonts/RPTArabic-Medium.woff') format('woff');
+  src: local('RPT Arabic Regular'),
+       url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_AlFont_com_-rpt-Regular.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
+/* SemiBold weight (600) - Uses Bold */
 @font-face {
   font-family: 'RPT Arabic';
-  src: local('RPT Arabic SemiBold'),
-       local('RPTArabic-SemiBold'),
-       url('/fonts/RPTArabic-SemiBold.woff2') format('woff2'),
-       url('/fonts/RPTArabic-SemiBold.woff') format('woff');
+  src: local('RPT Arabic Bold'),
+       url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_AlFont_com_-rpt-Bold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -138,10 +132,8 @@ html[lang="ar"],
 
 @font-face {
   font-family: 'RPT Latin';
-  src: local('RPT Latin Medium'),
-       local('RPTLatin-Medium'),
-       url('/fonts/RPTLatin-Medium.woff2') format('woff2'),
-       url('/fonts/RPTLatin-Medium.woff') format('woff');
+  src: local('RPT Latin Regular'),
+       url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_rpt-Regular.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -149,10 +141,8 @@ html[lang="ar"],
 
 @font-face {
   font-family: 'RPT Latin';
-  src: local('RPT Latin SemiBold'),
-       local('RPTLatin-SemiBold'),
-       url('/fonts/RPTLatin-SemiBold.woff2') format('woff2'),
-       url('/fonts/RPTLatin-SemiBold.woff') format('woff');
+  src: local('RPT Latin Bold'),
+       url('https://raw.githubusercontent.com/yasseralotaiibi/riyadh-metro-website/main/fonts/alfont_com_rpt-Bold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
