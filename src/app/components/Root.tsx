@@ -3,10 +3,12 @@ import { Menu, X, Globe, Train, Map, HelpCircle, Users, Calendar, AlertCircle, I
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { useLanguage } from "../contexts/LanguageContext";
+import { Logo } from "./Logo";
 
 export function Root() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<"en" | "ar">("en");
+  const { language, setLanguage, isRtl } = useLanguage();
   const location = useLocation();
 
   const navItems = [
@@ -50,9 +52,9 @@ export function Root() {
   ];
 
   return (
-    <div className={`min-h-screen flex flex-col bg-neutral-50 ${language === "ar" ? "rtl" : "ltr"}`}>
+    <div className={`min-h-screen flex flex-col bg-neutral-50 ${isRtl ? "rtl" : "ltr"}`}>
       {/* Service Status Bar */}
-      <div className="bg-[#00FF00] text-black px-4 py-2 text-sm text-center font-medium">
+      <div className="bg-[#5DD329] text-black px-4 py-2 text-sm text-center font-medium">
         <div className="flex items-center justify-center gap-2">
           <div className="size-2 rounded-full bg-black animate-pulse"></div>
           <span>
@@ -69,11 +71,7 @@ export function Root() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img 
-                src="/rpt-logo.svg" 
-                alt="Riyadh Public Transport" 
-                className="h-10 w-auto"
-              />
+              <Logo className="h-10 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -87,14 +85,14 @@ export function Root() {
                     to={item.path}
                     className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors relative ${
                       isActive
-                        ? "bg-[#00FF00]/10 text-black font-semibold"
+                        ? "bg-[#5DD329]/10 text-black font-semibold"
                         : "text-neutral-700 hover:bg-neutral-100"
                     }`}
                   >
                     <Icon className="size-4" />
                     <span>{language === "en" ? item.labelEn : item.labelAr}</span>
                     {item.badge && (
-                      <Badge className="ml-1 text-xs px-1.5 py-0 h-5 bg-[#00FF00] text-black border-none">
+                      <Badge className="ml-1 text-xs px-1.5 py-0 h-5 bg-[#5DD329] text-black border-none">
                         {item.badge}
                       </Badge>
                     )}
@@ -109,14 +107,14 @@ export function Root() {
                 variant="outline"
                 size="sm"
                 onClick={() => setLanguage(language === "en" ? "ar" : "en")}
-                className="hidden sm:flex items-center gap-2 border-neutral-300 hover:border-[#00FF00] hover:bg-[#00FF00]/10"
+                className="hidden sm:flex items-center gap-2 border-neutral-300 hover:border-[#5DD329] hover:bg-[#5DD329]/10"
               >
                 <Globe className="size-4" />
                 <span>{language === "en" ? "العربية" : "English"}</span>
               </Button>
               <Button 
                 size="sm" 
-                className="hidden sm:inline-flex bg-[#00FF00] text-black hover:bg-[#00DD00] font-semibold"
+                className="hidden sm:inline-flex bg-[#5DD329] text-black hover:bg-[#4CC320] font-semibold"
               >
                 {language === "en" ? "Open Darb App" : "افتح تطبيق درب"}
               </Button>
@@ -146,14 +144,14 @@ export function Root() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                       isActive
-                        ? "bg-[#00FF00]/10 text-black font-semibold"
+                        ? "bg-[#5DD329]/10 text-black font-semibold"
                         : "text-neutral-700 hover:bg-neutral-100"
                     }`}
                   >
                     <Icon className="size-5" />
                     <span>{language === "en" ? item.labelEn : item.labelAr}</span>
                     {item.badge && (
-                      <Badge className="ml-auto text-xs bg-[#00FF00] text-black border-none">
+                      <Badge className="ml-auto text-xs bg-[#5DD329] text-black border-none">
                         {item.badge}
                       </Badge>
                     )}
@@ -169,7 +167,7 @@ export function Root() {
                   <Globe className="size-4" />
                   {language === "en" ? "العربية" : "English"}
                 </Button>
-                <Button className="w-full bg-[#00FF00] text-black hover:bg-[#00DD00] font-semibold">
+                <Button className="w-full bg-[#5DD329] text-black hover:bg-[#4CC320] font-semibold">
                   {language === "en" ? "Open Darb App" : "افتح تطبيق درب"}
                 </Button>
               </div>
@@ -180,7 +178,7 @@ export function Root() {
 
       {/* Main Content */}
       <main className="flex-1">
-        <Outlet context={{ language }} />
+        <Outlet />
       </main>
 
       {/* Footer */}
@@ -189,11 +187,7 @@ export function Root() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="mb-4">
-                <img 
-                  src="/rpt-logo.svg" 
-                  alt="Riyadh Public Transport" 
-                  className="h-8 w-auto brightness-0 invert"
-                />
+                <Logo className="h-8 w-auto" variant="light" />
               </div>
               <p className="text-sm text-neutral-400">
                 {language === "en" 
@@ -207,22 +201,22 @@ export function Root() {
               </h3>
               <ul className="space-y-2 text-sm text-neutral-400">
                 <li>
-                  <Link to="/plan" className="hover:text-[#00FF00]">
+                  <Link to="/plan" className="hover:text-[#5DD329]">
                     {language === "en" ? "Plan a Trip" : "خطط رحلة"}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/stations" className="hover:text-[#00FF00]">
+                  <Link to="/stations" className="hover:text-[#5DD329]">
                     {language === "en" ? "All Stations" : "جميع المحطات"}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/first-time" className="hover:text-[#00FF00]">
+                  <Link to="/first-time" className="hover:text-[#5DD329]">
                     {language === "en" ? "First Time Rider" : "راكب لأول مرة"}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/visitors" className="hover:text-[#00FF00]">
+                  <Link to="/visitors" className="hover:text-[#5DD329]">
                     {language === "en" ? "Tourists & Visitors" : "السياح والزوار"}
                   </Link>
                 </li>
@@ -234,22 +228,22 @@ export function Root() {
               </h3>
               <ul className="space-y-2 text-sm text-neutral-400">
                 <li>
-                  <Link to="/etiquette" className="hover:text-[#00FF00]">
+                  <Link to="/etiquette" className="hover:text-[#5DD329]">
                     {language === "en" ? "Etiquette Guide" : "دليل الآداب"}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/accessibility" className="hover:text-[#00FF00]">
+                  <Link to="/accessibility" className="hover:text-[#5DD329]">
                     {language === "en" ? "Accessibility" : "إمكانية الوصول"}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="hover:text-[#00FF00]">
+                  <Link to="/faq" className="hover:text-[#5DD329]">
                     {language === "en" ? "FAQ" : "الأسئلة الشائعة"}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/status" className="hover:text-[#00FF00]">
+                  <Link to="/status" className="hover:text-[#5DD329]">
                     {language === "en" ? "Service Status" : "حالة الخدمة"}
                   </Link>
                 </li>
